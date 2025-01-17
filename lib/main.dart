@@ -80,6 +80,8 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         initialRoute: AppRoutes.HOME,
         getPages: AppPages.routes,
+        theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
         themeMode:
             themeController.isDarkMode.value ? ThemeMode.dark : ThemeMode.light,
       ),
