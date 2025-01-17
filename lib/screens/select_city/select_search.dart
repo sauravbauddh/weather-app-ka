@@ -22,61 +22,55 @@ class CitySearchWidget extends StatelessWidget {
       builder: (context, double value, child) {
         return Transform.translate(
           offset: Offset(0, -50 * (1 - value)),
-          child: Opacity(
-            opacity: value,
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Colors.white.withOpacity(0.1),
-                    Colors.white.withOpacity(0.05),
-                  ],
-                ),
-                border: Border.all(
-                  color: Colors.white.withOpacity(0.2),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 10,
-                    spreadRadius: 2,
-                  ),
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Colors.white.withOpacity(0.1),
+                  Colors.white.withOpacity(0.05),
                 ],
               ),
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(25),
-                  onTap: () => _showSearchModal(context),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 12),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.search,
-                          color: Colors.white.withOpacity(0.8),
-                        ),
-                        const SizedBox(width: 12),
-                        Text(
-                          'Search city...',
-                          style: gStyle(
-                            size: 16,
-                            color: Colors.white.withOpacity(0.8),
-                          ),
-                        ),
-                        const Spacer(),
-                        Icon(
-                          Icons.location_on,
-                          color: Colors.white.withOpacity(0.8),
-                        ),
-                      ],
+              border: Border.all(
+                color: Colors.white.withOpacity(0.2),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 10,
+                  spreadRadius: 2,
+                ),
+              ],
+            ),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(25),
+              onTap: () => _showSearchModal(context),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20, vertical: 12),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.search,
+                      color: Colors.white.withOpacity(0.8),
                     ),
-                  ),
+                    const SizedBox(width: 12),
+                    Text(
+                      'Search city...',
+                      style: gStyle(
+                        size: 16,
+                        color: Colors.white.withOpacity(0.8),
+                      ),
+                    ),
+                    const Spacer(),
+                    Icon(
+                      Icons.location_on,
+                      color: Colors.white.withOpacity(0.8),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -136,9 +130,9 @@ class _CitySearchModalState extends State<_CitySearchModal> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.9,
+      height: Get.height * 0.9,
       decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
+        color: Get.theme.scaffoldBackgroundColor,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
       ),
       child: Column(
