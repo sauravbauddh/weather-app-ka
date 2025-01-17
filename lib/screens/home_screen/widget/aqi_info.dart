@@ -312,6 +312,7 @@ class _AQIInfoState extends State<AQIInfo> with SingleTickerProviderStateMixin {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
@@ -323,18 +324,14 @@ class _AQIInfoState extends State<AQIInfo> with SingleTickerProviderStateMixin {
             ),
           ),
           const SizedBox(height: 4),
-          // Wrap the text with an Expanded widget to avoid overflow
-          Expanded(
-            child: SingleChildScrollView(
-              // Ensures scrolling if the content is large
-              child: Text(
-                value?.toStringAsFixed(1) ?? "N/A",
-                style: gStyle(
-                  size: 13,
-                  color: isDark ? Colors.white54 : Colors.black54,
-                ),
-              ),
+          Text(
+            value?.toStringAsFixed(1) ?? "N/A",
+            style: gStyle(
+              size: 13,
+              color: isDark ? Colors.white54 : Colors.black54,
             ),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
           ),
         ],
       ),
