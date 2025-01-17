@@ -28,7 +28,7 @@ class _AQIInfoState extends State<AQIInfo> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    aqiValue = widget.airQualityData.pm25 ?? 0;
+    aqiValue = widget.airQualityData.gbDefraIndex ?? 0;
     _controller = AnimationController(
       duration: const Duration(milliseconds: 800),
       vsync: this,
