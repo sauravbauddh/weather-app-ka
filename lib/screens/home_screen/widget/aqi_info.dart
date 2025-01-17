@@ -21,13 +21,14 @@ class AQIInfo extends StatefulWidget {
 }
 
 class _AQIInfoState extends State<AQIInfo> with SingleTickerProviderStateMixin {
-  int aqiValue = 100;
+  late final aqiValue;
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
+    aqiValue = widget.airQualityData.gbDefraIndex ?? 0;
     _controller = AnimationController(
       duration: const Duration(milliseconds: 800),
       vsync: this,
@@ -65,7 +66,6 @@ class _AQIInfoState extends State<AQIInfo> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    aqiValue += widget.airQualityData.gbDefraIndex ?? 0;
     final String category = getAqiCategory(aqiValue);
     final Color aqiColor = getAqiColor(aqiValue);
     final isDark = Theme.of(context).brightness == Brightness.dark;

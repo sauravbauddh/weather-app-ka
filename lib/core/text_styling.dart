@@ -5,6 +5,7 @@ import 'package:weather_app/core/theme_controller.dart';
 
 class GFonts {
   static const russoOne = GoogleFonts.russoOne;
+  static const openSans = GoogleFonts.openSans;
   static const chakraPetch = GoogleFonts.chakraPetch;
 }
 
@@ -22,7 +23,7 @@ TextStyle gStyle({
 }) {
   final themeController = Get.find<ThemeController>();
 
-  return (GFonts.russoOne)(
+  return (GFonts.chakraPetch)(
     fontWeight: weight ?? FontWeight.normal,
     fontSize: size,
     color: color ??

@@ -174,9 +174,9 @@ class _CityInfoState extends State<CityInfo>
         Expanded(
           child: Text(
             '${widget.name}, ${widget.region}, ${widget.country}',
-            style: GFonts.russoOne(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+            style: gStyle(
+              size: 20,
+              weight: FontWeight.bold,
               color: isDark ? Colors.white : Colors.black87,
             ),
             overflow: TextOverflow.ellipsis,
@@ -207,8 +207,8 @@ class _CityInfoState extends State<CityInfo>
           DateFormat('dd-MM-yyyy, hh:mm a')
               .format(DateTime.parse(widget.localTime!))
               .toString(),
-          style: GFonts.russoOne(
-            fontSize: 16,
+          style: gStyle(
+            size: 16,
             color: isDark ? Colors.white70 : Colors.black54,
           ),
         ),

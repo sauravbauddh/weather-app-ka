@@ -387,7 +387,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  'Launched into existence by',
+                  'Rushed 😛 and speed-coded 🥴 by',
                   style: gStyle(
                     color: themeController.isDarkMode.value
                         ? Colors.grey[300]
