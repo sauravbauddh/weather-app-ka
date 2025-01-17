@@ -258,33 +258,30 @@ class _CitySearchModalState extends State<_CitySearchModal> {
   }
 
   Widget _buildCityTile(String city) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: () => selectAndSaveCity(city),
-        borderRadius: BorderRadius.circular(15),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Colors.blue.withOpacity(0.2),
-                Colors.blue.withOpacity(0.1),
-              ],
-            ),
-            border: Border.all(
-              color: Colors.blue.withOpacity(0.2),
-            ),
+    return InkWell(
+      onTap: () => selectAndSaveCity(city),
+      borderRadius: BorderRadius.circular(15),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Colors.blue.withOpacity(0.2),
+              Colors.blue.withOpacity(0.1),
+            ],
           ),
-          child: Center(
-            child: Text(
-              city,
-              style: gStyle(
-                size: 16,
-                weight: FontWeight.w500,
-              ),
+          border: Border.all(
+            color: Colors.blue.withOpacity(0.2),
+          ),
+        ),
+        child: Center(
+          child: Text(
+            city,
+            style: gStyle(
+              size: 16,
+              weight: FontWeight.w500,
             ),
           ),
         ),
