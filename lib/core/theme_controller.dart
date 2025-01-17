@@ -5,13 +5,13 @@ import '../network/storage_service.dart';
 
 class ThemeController extends GetxController {
   final _storage = Get.find<StorageService>();
-  var isDarkMode = false.obs;
+  var isDarkMode = true.obs;
 
   @override
   void onInit() {
     super.onInit();
     String savedTheme = _storage.getThemeMode();
-    isDarkMode.value = savedTheme == 'dark';
+    isDarkMode.value = savedTheme.isEmpty ? true : savedTheme == 'dark';
     if (isDarkMode.value) {
       Get.changeThemeMode(ThemeMode.dark);
       Get.changeTheme(ThemeData.dark());

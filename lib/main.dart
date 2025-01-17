@@ -78,10 +78,8 @@ class _MyAppState extends State<MyApp> {
     return Obx(
       () => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.SPLASH,
+        initialRoute: AppRoutes.HOME,
         getPages: AppPages.routes,
-        theme: ThemeData.light(),
-        darkTheme: ThemeData.dark(),
         themeMode:
             themeController.isDarkMode.value ? ThemeMode.dark : ThemeMode.light,
       ),
