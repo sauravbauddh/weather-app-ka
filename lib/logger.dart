@@ -11,7 +11,6 @@ final Logger logger = Logger(
     lineLength: 120,
     colors: true,
     printEmojis: true,
-    printTime: true,
   ),
 );
 
@@ -31,7 +30,8 @@ void initLogger(VoidCallback runApp) {
   runZonedGuarded(() async {
     FlutterError.onError = (FlutterErrorDetails details) {
       FlutterError.dumpErrorToConsole(details);
-      logger.e(details.runtimeType, error: details.exception,stackTrace: details.stack);
+      logger.e(details.runtimeType,
+          error: details.exception, stackTrace: details.stack);
     };
     runApp.call();
   }, (error, stacktrace) {
