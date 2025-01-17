@@ -93,7 +93,7 @@ class TemperatureInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "$temp°C",
+              "$temp °C",
               style: gStyle(
                 size: 64,
                 weight: FontWeight.bold,
